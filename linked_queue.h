@@ -6,16 +6,17 @@
 #define C__PRIME_LINKED_QUEUE_H
 
 
-//结点 结构
-// val next  val 先用int  后续用模板 泛型
-struct Node {
-    int val;
-    Node* next{nullptr};
-    explicit Node(int value):val(value){}
-};
+
 
 
 class LinkedQueue {
+    //结点 结构
+    // val next  val 先用int  后续用模板 泛型
+    struct Node {
+        int val;
+        Node* next{nullptr};
+        explicit Node(int value):val(value){}
+    };
     Node *front;
     Node *rear;
     int size;

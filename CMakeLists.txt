@@ -5,4 +5,6 @@ set(CMAKE_CXX_STANDARD 23)
 
 add_executable(c__prime main.cpp
         linked_queue.h
-        linked_queue.cpp)
+        linked_queue.cpp
+        linked_stack.h
+        linked_stack.cpp)
