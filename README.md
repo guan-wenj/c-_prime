@@ -1,2 +1,2 @@
-# c-_prime
+# c_prime
 study c++_prime
