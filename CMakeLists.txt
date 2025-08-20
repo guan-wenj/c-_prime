@@ -7,4 +7,7 @@ add_executable(c__prime main.cpp
         linked_queue.h
         linked_queue.cpp
         linked_stack.h
-        linked_stack.cpp)
+        linked_stack.cpp
+        library.h
+        library.cpp
+)
