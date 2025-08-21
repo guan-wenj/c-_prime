@@ -1,39 +1,39 @@
-#include "linked_queue.h"
-#include <print>
-#include "linked_stack.h"
-
-
-int main() {
-    auto queue=LinkedQueue<double>();
-    queue.display();
-    queue.push(1.1);
-    queue.push(2.36);
-    queue.push(3e-8);
-    queue.display();
-    std::println("{}", queue.pop());//1
-    std::println("{}", queue.peek());//2
-    std::println("{}", queue.pop());//2
-    std::println("{}", queue.peek());//3
-    queue.display();
-    std::println("{}", queue.get_size());
-    std::println("------------------------------------------------" );
-    auto stack = LinkedStack<std::string>();
-    stack.display();
-    stack.push("7");
-    stack.push("8");
-    stack.push("9");
-    stack.display();
-    std::println("{}", stack.pop());  // 3
-    std::println("{}", stack.peek()); // 2
-    std::println("{}", stack.pop());  // 2
-    std::println("{}", stack.peek()); // 1
-    stack.display();
-    std::println("{}", stack.get_size());  // 1
-    return 0;
-
-
-}
-
+// #include "linked_queue.h"
+// #include <print>
+// #include "linked_stack.h"
+//
+//
+// int main() {
+//     auto queue=LinkedQueue<double>();
+//     queue.display();
+//     queue.push(1.1);
+//     queue.push(2.36);
+//     queue.push(3e-8);
+//     queue.display();
+//     std::println("{}", queue.pop());//1
+//     std::println("{}", queue.peek());//2
+//     std::println("{}", queue.pop());//2
+//     std::println("{}", queue.peek());//3
+//     queue.display();
+//     std::println("{}", queue.get_size());
+//     std::println("------------------------------------------------" );
+//     auto stack = LinkedStack<std::string>();
+//     stack.display();
+//     stack.push("7");
+//     stack.push("8");
+//     stack.push("9");
+//     stack.display();
+//     std::println("{}", stack.pop());  // 3
+//     std::println("{}", stack.peek()); // 2
+//     std::println("{}", stack.pop());  // 2
+//     std::println("{}", stack.peek()); // 1
+//     stack.display();
+//     std::println("{}", stack.get_size());  // 1
+//     return 0;
+//
+//
+// }
+//
 
 // #include "library.h"
 // #include <print>
@@ -88,5 +88,34 @@ int main() {
 //     return 0;
 // }
 
+
+#include "dynamic_array.h"
+#include <print>
+int main() {
+    auto arr=DynamicArray<int,2>();
+    arr.push_back(1);
+    arr.push_back(2);
+    std::println("{}",arr.capacity());
+    arr.push_back(3);
+    std::println("{}",arr.get(2));
+    arr.push_back(4);
+    std::println("{}",arr.capacity());
+    std::println("{}",arr.size());
+    arr.push_back(5);
+    arr.display();
+    std::println("{}",find(arr,1));
+    auto arr1=DynamicArray<int,2>();
+    arr1.push_back(1);
+    arr1.push_back(2);
+    arr1.push_back(3);
+    auto arr2=concat(arr,arr1);
+    arr2.display();
+    try {
+        int a=arr.get(10);
+    }catch(const std::out_of_range& e) {
+        std::print("{}",e.what());
+    }
+
+}
 
 

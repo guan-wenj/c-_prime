@@ -8,4 +8,5 @@ add_executable(c__prime main.cpp
         library.h
         library.cpp
         linked_queue.h
+        dynamic_array.h
 )
