@@ -2,8 +2,8 @@
 // Created by guan on 2025/8/21.
 //
 
-#ifndef C__PRIME_DYNAMIC_ARRAY_H
-#define C__PRIME_DYNAMIC_ARRAY_H
+#ifndef C_PRIME_DYNAMIC_ARRAY_H
+#define C_PRIME_DYNAMIC_ARRAY_H
 #include <stdexcept>
 #include <print>
 
@@ -34,7 +34,7 @@ class DynamicArray {
     DynamicArray();
     DynamicArray(const DynamicArray& arr)=delete;
     DynamicArray& operator=(const DynamicArray& arr)=delete;
-    DynamicArray(DynamicArray&& other);
+    DynamicArray(DynamicArray&& other) noexcept;
     ~DynamicArray();
     void push_back(T value);
     T& get(int index) const;
@@ -57,7 +57,7 @@ size_(0),capacity_(InitCapacity){
 }
 
 template <typename T, int InitCapacity>
- DynamicArray<T, InitCapacity>::DynamicArray(DynamicArray&& other):
+ DynamicArray<T, InitCapacity>::DynamicArray(DynamicArray&& other) noexcept:
 data(other.data),size_(other.size()),capacity_(other.capacity()){
     other.data = nullptr;
     other.size_ = 0;
@@ -69,6 +69,10 @@ DynamicArray<T, InitCapacity>::~DynamicArray() {
     delete [] data;
 }
 
+/**
+ * @brief
+ * @param value
+ */
 template <typename T, int InitCapacity>
 void DynamicArray<T, InitCapacity>::push_back(T value) {
     if (size_>=capacity_) {
@@ -140,4 +144,4 @@ int find(const DynamicArray<T2,InitCapacity1>& arr,T2 value) {
 
 
 
-#endif //C__PRIME_DYNAMIC_ARRAY_H
+#endif //C_PRIME_DYNAMIC_ARRAY_H

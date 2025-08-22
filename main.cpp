@@ -89,6 +89,7 @@
 // }
 
 
+/*
 #include "dynamic_array.h"
 #include <print>
 int main() {
@@ -111,11 +112,28 @@ int main() {
     auto arr2=concat(arr,arr1);
     arr2.display();
     try {
-        int a=arr.get(10);
+        int _=arr.get(10);
     }catch(const std::out_of_range& e) {
         std::print("{}",e.what());
     }
 
 }
+*/
 
 
+
+#include "device.h"
+int main(){
+    Device* s=new SmartPhone("oppo",15.0,128);
+    Device* l=new Laptop("huawei",15.0,128);
+    Device* ll=new Laptop("mi",-9.0,128);
+    DeviceManager manager;
+    try {
+        manager.checkDevice(ll);
+    }catch (DeviceException& e) {
+        std::print("{}",e.what());
+    }
+    manager.showDeviceDetails(s);
+    manager.showDeviceDetails(l);
+    return 0;
+}

@@ -3,10 +3,13 @@ project(c__prime)
 
 set(CMAKE_CXX_STANDARD 23)
 
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
 add_executable(c__prime main.cpp
         linked_stack.h
         library.h
         library.cpp
         linked_queue.h
         dynamic_array.h
+        device.h
 )
